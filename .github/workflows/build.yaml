@@ -24,14 +24,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - id: meta
         name: Generate metadata for site image
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           # list of Docker images to use as base name for tags
           images: |
             ghcr.io/aostrom-dev/app
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value={{date 'YYYYMMDD-HHmmss' tz='Europe/Zurich'}}-{{sha}}
+            type=raw,value=nighty-{{date 'YYYYMMDD-HHmmss' tz='Europe/Zurich'}}-{{sha}}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
