@@ -31,7 +31,7 @@ jobs:
             ghcr.io/aostrom-dev/app
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=raw,value=nighty-{{date 'YYYYMMDD-HHmmss' tz='Europe/Zurich'}}-{{sha}}
+            type=raw,value=nightly-{{date 'YYYYMMDD-HHmmss' tz='Europe/Zurich'}}-{{sha}}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
