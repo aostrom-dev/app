@@ -1,12 +1,15 @@
 import { execSync } from "child_process";
 
-const gitHash = execSync("git rev-parse HEAD").toString().trim();
+if (process.env.NODE_ENV != "production") {
+  process.env.GIT_HASH = execSync("git rev-parse HEAD").toString().trim();
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    NEXT_PUBLIC_GIT_HASH: gitHash,
+    NEXT_PUBLIC_GIT_HASH: process.env.GIT_HASH,
   },
+  output: "standalone",
 };
 
 export default nextConfig;
