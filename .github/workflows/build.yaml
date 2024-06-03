@@ -6,8 +6,18 @@ on:
       - "main"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm run test
   docker:
     name: Build and push Docker image
+    needs: [test]
     runs-on: ubuntu-latest
     permissions:
       packages: write
