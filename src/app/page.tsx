@@ -16,7 +16,7 @@ export default function Home() {
       )}
     >
       <div className="flex flex-col items-center gap-8 m-6">
-        <h1 className="uppercase font-bold">{color} demo</h1>
+        <h1 className="uppercase font-bold">{color}</h1>
         <p>{process.env.NEXT_PUBLIC_GIT_HASH}</p>
       </div>
     </main>
