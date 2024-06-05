@@ -1,6 +1,6 @@
 import { cn } from "./lib/cn";
 
-type Color = "red" | "blue";
+type Color = "red" | "green" | "blue";
 
 export default function Home() {
   const color: Color = "red" as Color;
@@ -11,6 +11,7 @@ export default function Home() {
         "overflow-auto min-h-screen grid place-items-center text-3xl text-white",
         {
           "bg-red-500": color === "red",
+          "bg-green-500": color === "green",
           "bg-blue-500": color === "blue",
         }
       )}
