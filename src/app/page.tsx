@@ -3,7 +3,7 @@ import { cn } from "./lib/cn";
 type Color = "red" | "green" | "blue";
 
 export default function Home() {
-  const color: Color = "red" as Color;
+  const color: Color = "blue" as Color;
 
   return (
     <main
